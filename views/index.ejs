@@ -1,0 +1,40 @@
+<%- include("header.ejs") %>
+
+<div class="px-2 py-2 my-2 text-center">
+    <img class="d-block mx-auto mb-4" src="todo.png" alt="todo list svg image" width="72" height="57">
+    <h1 class="display-5 fw-bold text-body-emphasis">Today's tasks</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-1">Here you can write down, check done and delete your tasks for today.</p>
+      <p class="lead mb-1">You can:</p>
+      <p class="mb-1">Add a todo at the bottom of the list</p>
+      <p class="mb-4">Delete todo by pressing checkbox and delete icon</p>
+    </div>
+  </div>
+
+  <div>
+    <ul class="list-group">
+
+      <% for (let index = 0; index < array.length-1; index++) { %>
+      <%  const element = array[index]; %>
+      <% var checkbox = "checkbox_" + index %>
+      <form action="/submitDailyDelete" method="POST">
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" name="checkbox" value="<%= checkbox %>" id="n<% index %>Checkbox">
+          <label class="form-check-label" for="n<% index %>Checkbox"><%= element %></label>
+          <input type="image" src="delete.png" alt="Submit" class="submit image" value="OK">
+        </li>
+      </form>
+      <% } %>
+
+      <li class="list-group-item">
+        <form action="/submitDailyAdd" method="POST">
+          <input type="text" name="dTodo" placeholder="Add new todo.." class="input">
+          <input type="image" src="add.png" alt="Submit" class="submit image" value="OK">
+        </form>
+      </li>
+    </ul>
+  </div>
+
+
+
+<%- include("footer.ejs") %>

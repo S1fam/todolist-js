@@ -1,0 +1,54 @@
+.nav{
+    margin: 50px;
+    background-color: #B9B7BD;
+}
+
+.foot {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.navigation{
+    background-color: #B9B7BD;
+}
+
+html {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.list-group {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.image {
+    background-color: white;
+    border: none;
+    align-content: right;
+    height: 25px;
+}
+
+.trashcan {
+    height: 25px;
+}
+
+ul button, .submit {
+    float: right;
+}
+
+.input {
+    width: 90%;
+    border: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .input {
+        width: 80%;
+    }
+}
+
+.center {
+    width: 60%;
+    margin-left: 20%;
+}
